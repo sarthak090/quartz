@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto !important;
+}
+
+@font-face {
+  src: url('./helpers/font/Poppins-Bold.ttf');
+  font-family: 'Poppins-Bold';
+  font-display: swap;
+}
+@font-face {
+  src: url('./helpers/font/Poppins-SemiBold.ttf');
+  font-family: 'Poppins-SemiBold';
+  font-display: swap;
+}
+@font-face {
+  src: url('./helpers/font/Poppins-ExtraBold.ttf');
+  font-family: 'Poppins-Heavy';
+  font-display: swap;
+}
+@font-face {
+  src: url('./helpers/font/Poppins-Medium.ttf');
+  font-family: 'Poppins-Medium';
+  font-display: swap;
+}
+@font-face {
+  src: url('./helpers/font/Poppins-Regular.ttf');
+  font-family: 'Poppins-Regular';
+  font-display: swap;
+}
+@font-face {
+  src: url('./helpers/font/Poppins-Black.ttf');
+  font-family: 'Poppins-Black';
+  font-display: swap;
+}
+
+@import './helpers/variables';
+@import './helpers/media_queries';
+@import './helpers/theme';
+@import './helpers/font';
+
+// components
+@import './components/navbar';
+@import './components/footerproducts';
+@import './components/accordian';
+@import './components/footer';
+@import './components/auth';
+@import './components/breadcrumb';
+@import './components/product';
+@import './components/pagination';
+
+// pages
+@import './pages/index';
+@import './pages/contact';
+@import './pages/faq';
+@import './pages/productdetail';
+@import './pages/cart';
+@import './pages/checkout';
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  // display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+  animation: fadeIn 1s;
+}
+#overlay > .row{
+  
+  max-width: 600px;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.load-btn {
+  outline: none;
+  color: #ffffff !important;
+  padding: 10px 30px;
+}
+
+.page-content {
+  padding: 20px 30px 50px;
+  font-size: 15px;
+  line-height: 23px;
+
+
+  b {
+    font-family: 'Poppins-SemiBold';
+    font-size: 18px;
+    line-height: 27px;
+  }
+  li > b {
+    font-size: 15px;
+    line-height: 23px;
+  }
+}

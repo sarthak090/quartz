@@ -1,0 +1,74 @@
+.accordion {
+  width: 100%;
+  margin: 2rem auto;
+}
+.accordion-item {
+  position: relative;
+  border: none !important;
+  margin-bottom: 29px;
+}
+.accordion-title {
+  display: flex;
+  // flex-direction: row;
+  align-items: center;
+  // justify-content: space-between;
+  cursor: pointer;
+  background-color: $accordianBg;
+}
+
+.accordion-title {
+  font-family: 'Poppins-SemiBold';
+  font-weight: 600;
+}
+
+.accordion-title {
+  padding: 22px 48px 9px 28px;
+}
+
+.accordion-title:hover {
+  background-color: $accordianBg;
+}
+
+.accordion-title,
+.accordion-content {
+  font-size: 22px;
+  line-height: 33px;
+  color: $text;
+  letter-spacing: 0.44px;
+}
+
+.accordion-content {
+  font-family: 'Poppins-Regular';
+  font-weight: 400;
+}
+
+.accordion-content-container {
+  background-color: $accordianBg;
+  height: 100%;
+  padding: 9px 48px 27px 28px;
+}
+.accordion-content {
+  max-width: 80%;
+}
+
+.accordion-header-icon {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  height: 23px;
+  width: 23px;
+  position: absolute;
+  right: 35px;
+  top: 34%;
+
+  // img {
+  //   width: 23px;
+  //   height: 23px;
+  // }
+}
+
+@media screen and (max-width: 600px) {
+  .accordion-title h5 {
+    margin-right: 20px;
+  }
+}

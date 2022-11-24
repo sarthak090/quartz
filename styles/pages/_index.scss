@@ -1,0 +1,404 @@
+.page-title {
+  font-family: 'Poppins-Bold';
+  font-size: 28px;
+  line-height: 42px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.hero-banner {
+  margin-bottom: 58px;
+  position: relative;
+  .thumbnail {
+    position: relative;
+  }
+  img {
+    max-width: 100%;
+  }
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba($color: $black, $alpha: 0.5);
+  }
+  .base-content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    padding: 0px 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    h3 {
+      font-family: 'Poppins-Bold';
+      font-weight: 700;
+      font-size: 44px;
+      line-height: 65px;
+      letter-spacing: 0.88px;
+      color: $white;
+      text-transform: uppercase;
+    }
+    p {
+      font-family: 'Poppins-Regular';
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 23px;
+      letter-spacing: 0.44px;
+      color: $white;
+      margin-top: 23px;
+    }
+    .btn-shop {
+      width: 100%;
+      max-width: 380px;
+      height: 50px;
+      border-radius: 4px;
+      margin-top: 42px;
+      font-family: 'Poppins-Medium';
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 30px;
+      color: $white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn {
+      outline: 0 none;
+      border: none !important;
+      box-shadow: none !important;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+      &:focus {
+        outline: 0 none;
+        border: none !important;
+        box-shadow: none !important;
+      }
+      &:active {
+        outline: 0 none;
+        border: none !important;
+        box-shadow: none !important;
+      }
+    }
+  }
+}
+
+.brands-section {
+  position: relative;
+  background-color: $white;
+  overflow: hidden;
+  .brands {
+    margin-top: 27px;
+    .brands_list {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      margin-bottom: 25px;
+      flex-flow: wrap;
+      li {
+        text-align: center;
+        margin: 0 0 10px;
+
+        img {
+          margin: 0 0 15px;
+          object-fit: contain;
+          max-width: 150px !important;
+          -o-object-fit: contain;
+          object-fit: contain;
+          object-position: center;
+          &.w80 {
+            max-width: 150px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.top-collection {
+  position: relative;
+  margin-bottom: 200px;
+  .collection-item {
+    position: relative;
+    .thumbnail {
+      border-radius: 4px;
+      text-align: center;
+      img {
+        border-radius: 4px;
+        max-width: 100%;
+      }
+    }
+    .item-content {
+      position: absolute;
+      box-shadow: 0px 3px 32px #9a9a9a29;
+      width: 85%;
+      margin: auto;
+      margin-top: -30px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      background-color: $white;
+      padding-top: 19px;
+      padding-bottom: 19px;
+      text-align: center;
+
+      h3 {
+        font-family: 'Poppins-SemiBold';
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 35px;
+        color: $text;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      a {
+        text-decoration: none;
+        color: $primary;
+        font-family: 'Poppins-Medium';
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.best-seller {
+  h3 {
+    font-family: 'Poppins-Bold';
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 65px;
+    letter-spacing: 0.88px;
+    text-align: center;
+    color: $text;
+    margin-bottom: 0px;
+  }
+  h1 {
+    margin-bottom: 50px;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.shipping-banner {
+  margin-bottom: 58px;
+  position: relative;
+  margin-top: 30px;
+  .thumbnail {
+    position: relative;
+  }
+  img {
+    max-width: 100%;
+  }
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba($color: $black, $alpha: 0.5);
+  }
+  .base-content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 60px;
+    height: 100%;
+
+    h3 {
+      font-family: 'Poppins-Bold';
+      font-weight: 700;
+      font-size: 44px;
+      line-height: 65px;
+      letter-spacing: 0.88px;
+      max-width: 698px;
+      color: $white;
+      text-transform: uppercase;
+    }
+    p {
+      font-family: 'Poppins-Regular';
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 23px;
+      letter-spacing: 0.44px;
+      color: $white;
+      margin-top: 23px;
+    }
+    .btn-shop {
+      width: 100%;
+      max-width: 380px;
+      height: 50px;
+      border-radius: 4px;
+      margin-top: 42px;
+      font-family: 'Poppins-Medium';
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 30px;
+      color: $white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn {
+      outline: 0 none;
+      border: none !important;
+      box-shadow: none !important;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+      &:focus {
+        outline: 0 none;
+        border: none !important;
+        box-shadow: none !important;
+      }
+      &:active {
+        outline: 0 none;
+        border: none !important;
+        box-shadow: none !important;
+      }
+    }
+  }
+}
+
+.vendor-section {
+  margin-bottom: 75px;
+  position: relative;
+  margin-top: 30px;
+  .thumbnail {
+    height: 279px;
+    position: relative;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../../src/assets/images/vendor-bg.png);
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba($color: $primary, $alpha: 0.6);
+  }
+  .section-title {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    h4 {
+      font-family: 'Poppins-Bold';
+      font-weight: 700;
+      font-size: 51px;
+      line-height: 77px;
+      letter-spacing: 1.02px;
+      color: $white;
+      text-align: center;
+      text-transform: uppercase;
+      width: 100%;
+    }
+    a {
+      text-decoration: none;
+      color: $white;
+      strong {
+        color: $white;
+      }
+    }
+    h5 {
+      strong {
+        font-family: 'Poppins-Bold';
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .hero-banner {
+    margin-top: 20px;
+    .thumbnail {
+      min-height: 520px;
+      img {
+        display: none !important;
+      }
+    }
+    .base-content {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  .top-collection {
+    .collection-item {
+      padding-left: 15px;
+      padding-right: 15px;
+      .thumbnail {
+        div {
+          width: 100%;
+        }
+      }
+      margin-bottom: 120px;
+    }
+  }
+  .shipping-banner {
+    .thumbnail {
+      min-height: 500px;
+      img {
+        display: none !important;
+      }
+    }
+
+    .base-content {
+      padding-left: 10px;
+      padding-right: 10px;
+      h3 {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+      .btn-shop {
+        max-width: 300px;
+      }
+    }
+  }
+  .vendor-section {
+    .section-title {
+      h4 {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+      h5 {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .hero-banner {
+    padding: 10px 0px;
+
+    .base-content {
+      padding-bottom: 10px;
+      h3 {
+        font-size: 40px;
+        line-height: 40px;
+      }
+    }
+  }
+}

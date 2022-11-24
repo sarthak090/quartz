@@ -1,0 +1,104 @@
+.custom-select {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 0px 20px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 100%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+.checkout {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password'] {
+    width: 100%;
+  }
+  button {
+    color: aliceblue;
+    font-size: 18px;
+  }
+}
+.align-left {
+  text-align: left !important;
+}
+
+.SubmitButton {
+  display: block;
+  font-size: 16px;
+  width: 200px;
+  height: 50px;
+  background-color: $primary;
+  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 $primary;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+  will-change: transform, background-color, box-shadow;
+}
+
+.SubmitButton:active {
+  background-color: $primary;
+  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 $primary;
+  transform: scale(0.99);
+}
+
+.SubmitButton.SubmitButton--error {
+  transform: translateY(15px);
+}
+.SubmitButton.SubmitButton--error:active {
+  transform: scale(0.99) translateY(15px);
+}
+
+.SubmitButton:disabled {
+  opacity: 0.5;
+  cursor: default;
+  background-color: $primary;
+  box-shadow: none;
+}
+
+.ErrorMessage {
+  color: #9e2146;
+  display: flex;
+  padding: 0 15px;
+  font-size: 13px;
+  margin-top: 0px;
+  width: 100%;
+  transform: translateY(-15px);
+  opacity: 0;
+  animation: fade 150ms ease-out;
+  animation-delay: 50ms;
+  animation-fill-mode: forwards;
+  will-change: opacity, transform;
+}
+
+.ErrorMessage svg {
+  margin-right: 10px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
