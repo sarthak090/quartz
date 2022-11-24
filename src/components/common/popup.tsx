@@ -1,25 +1,7 @@
-import { useEffect, useState, useRef, Dispatch } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import useScrollPosition from '../../hooks/useScrollPosition';
-function useOutsideAlerter(
-  ref: any,
-  setIsVisible: (t: boolean) => void,
-  setIsActive: (t: boolean) => void
-) {
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (ref.current && !ref.current.contains(event.target)) {
-        setIsVisible(false);
-        setIsActive(false);
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [ref]);
-}
-export default function popup() {
+import useOutsideAlerter from '../../hooks/useOutsideAlerter';
+export default function Popup() {
   const scrollPosition = useScrollPosition();
   const [isVisible, setIsVisible] = useState(false);
   const [isActive, setIsActive] = useState(true);
