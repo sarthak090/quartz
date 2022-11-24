@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 function useOutsideAlerter(ref, setIsVisible, setIsActive) {
   useEffect(() => {
     function handleClickOutside(event) {
