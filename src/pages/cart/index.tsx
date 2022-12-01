@@ -101,13 +101,7 @@ const Cart: React.FC = () => {
 
   //   alert('Sorry, the Promotional code you entered is not valid!');
   // };
-  const isValidCode = async (code: string) => {
-    return Api.get(`coupons?code=${code}`)
-      .then((response: any) => {
-        return response;
-      })
-      .catch((error: any) => console.log(error.response));
-  };
+
   const applyCode = async () => {
     // if (couponCode.length < 4) {
     //   return alert('Enter Valid Code');

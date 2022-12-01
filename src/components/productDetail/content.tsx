@@ -1,6 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import CryptoJS from 'crypto-js/aes';
 import { useSiteContext } from '../../context';
 import IconAdd from '../../assets/svgs/icon-add.svg';

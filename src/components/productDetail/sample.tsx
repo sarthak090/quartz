@@ -1,10 +1,7 @@
 import Image from 'next/image';
 import headphone from '../../assets/svgs/icon-headphone.svg';
 import { useEffect, useRef } from 'react';
-interface RProps {
-  ref: any;
-  setShowSample: (v: Boolean) => void;
-}
+
 function useOutsideAlerter(ref: any, setShowSample: (v: Boolean) => void) {
   useEffect(() => {
     function handleClickOutside(event: any) {
