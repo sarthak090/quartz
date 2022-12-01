@@ -5,7 +5,7 @@ import ProductList from '../../components/cart/ProductList';
 import Header from '../../components/cart/Header';
 import { useRouter } from 'next/router';
 import { useSiteContext } from '../../context';
-import { Api } from '../../config/index';
+
 import { caluclateDiscount } from '../../utils/calculate-discount';
 
 // const PROMOTIONS = [
