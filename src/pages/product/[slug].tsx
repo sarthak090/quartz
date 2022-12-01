@@ -83,7 +83,7 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
 
   await getEntireProductList();
 
-  const paths = await productList.map(({ node }: { node: any }) => ({
+  const paths = await productList.slice(0, 10).map(({ node }: { node: any }) => ({
     params: { slug: node?.slug },
   }));
 

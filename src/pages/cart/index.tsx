@@ -1,10 +1,12 @@
-import React, { useEffect, Fragment } from 'react';
+import React, { useEffect, Fragment, useState } from 'react';
 import CryptoJS from 'crypto-js/aes';
 import Summary from '../../components/cart/Summary';
 import ProductList from '../../components/cart/ProductList';
 import Header from '../../components/cart/Header';
 import { useRouter } from 'next/router';
 import { useSiteContext } from '../../context';
+import { Api } from '../../config/index';
+import { caluclateDiscount } from '../../utils/calculate-discount';
 
 // const PROMOTIONS = [
 //   {
@@ -26,7 +28,9 @@ const TAX = 0;
 const Cart: React.FC = () => {
   const router = useRouter();
   const { updateCartLength, list } = useSiteContext();
+  const [couponCode, setCouponCode] = useState('');
   const [products, setProducts] = React.useState<any>(list);
+  const [discount, setDiscount] = useState(0);
   // const [promoCode, setPromoCode] = React.useState('');
   // const [discountPercent, setDiscountPercent] = React.useState(0);
 
@@ -97,6 +101,33 @@ const Cart: React.FC = () => {
 
   //   alert('Sorry, the Promotional code you entered is not valid!');
   // };
+  const isValidCode = async (code: string) => {
+    return Api.get(`coupons?code=${code}`)
+      .then((response: any) => {
+        return response;
+      })
+      .catch((error: any) => console.log(error.response));
+  };
+  const applyCode = async () => {
+    // if (couponCode.length < 4) {
+    //   return alert('Enter Valid Code');
+    // }
+    const { data } = await fetch(`/api/coupon?code=${couponCode}`).then((r) => r.json());
+    const coupon = data[0];
+    console.log(subTotal);
+
+    const test = caluclateDiscount({
+      items: itemCount,
+      subtotal: subTotal,
+      discountData: {
+        type: coupon.discount_type,
+        amount: coupon.amount,
+      },
+    });
+    setDiscount(test?.Discount);
+
+    console.log({ test });
+  };
 
   return (
     <Fragment>
@@ -111,10 +142,26 @@ const Cart: React.FC = () => {
                 onChangeProductQuantity={onChangeProductQuantity}
                 onRemoveProduct={onRemoveProduct}
               />
-
+              <div className='my-4'>
+                <div className='form-group'>
+                  <label htmlFor='coupon'> Enter Coupon</label>
+                  <input
+                    type='text'
+                    className='form-control border'
+                    id='coupon'
+                    placeholder='Coupon code '
+                    onChange={(e) => setCouponCode(e.target.value)}
+                  />
+                </div>
+                <button
+                  onClick={applyCode}
+                  className='mt-2 px-2 btn btn-primary btn-shop text-white'>
+                  Apply Code
+                </button>
+              </div>
               <Summary
                 subTotal={subTotal}
-                discount={0}
+                discount={discount}
                 tax={TAX}
                 // onEnterPromoCode={onEnterPromoCode}
                 // checkPromoCode={checkPromoCode}

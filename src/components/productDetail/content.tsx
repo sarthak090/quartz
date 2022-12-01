@@ -10,7 +10,7 @@ import IconTwitter from '../../assets/svgs/icon-twitter.svg';
 import IconInstagram from '../../assets/svgs/icon-instagram.svg';
 import IconLinkedin from '../../assets/svgs/icon-linkedin.svg';
 import toast from 'react-hot-toast';
-
+import Sample from './sample';
 interface Props {
   // id: number;
   // name: string;
@@ -34,7 +34,7 @@ const Content: React.FC<Props> = ({ product }) => {
   const [selectedPrice, setSelectedPrice] = useState<string>('');
   const [variations, setVariations] = useState<any>([]);
   const [variationId, setVariationId] = useState<number>(0);
-
+  const [showSample, setShowSample] = useState<Boolean>(false);
   useEffect(() => {
     setThick('');
     if (
@@ -148,8 +148,13 @@ const Content: React.FC<Props> = ({ product }) => {
       manageCart(temp);
     }
   };
+  const onClickHandler = () => {
+    console.log('clicked');
+    setShowSample(true);
+  };
   return (
     <section className='product-base-content'>
+      {showSample && <Sample setShowSample={setShowSample} />}
       <div className='breadcrumb'>
         <p>HOME / SIZE / {paSlabSizes?.nodes?.length > 0 && paSlabSizes?.nodes[0]?.name}</p>
       </div>
@@ -241,10 +246,8 @@ const Content: React.FC<Props> = ({ product }) => {
           </div>
         )}
       </div>
-      <div className='sample-order-link'>
-        <Link href='/' as='/'>
-          <a>Click Here To Order A Sample</a>
-        </Link>
+      <div className='sample-order-link cursor-pointer' onClick={onClickHandler}>
+        <a href='#'>Click Here To Order A Sample </a>
       </div>
       {product?.type === 'VARIABLE' && (
         <Fragment>
