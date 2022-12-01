@@ -7,7 +7,7 @@ interface RProps {
 }
 function useOutsideAlerter(ref: any, setShowSample: (v: Boolean) => void) {
   useEffect(() => {
-    function handleClickOutside(event) {
+    function handleClickOutside(event: any) {
       if (ref.current && !ref.current.contains(event.target)) {
         setShowSample(false);
       }
