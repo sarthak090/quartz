@@ -128,10 +128,10 @@ const Checkout: React.FC = () => {
         return;
       }
 
-      if (error) {
-        elements.getElement('card')!.focus();
-        return;
-      }
+      // if (error) {
+      //   elements.getElement('card')!.focus();
+      //   return;
+      // }
 
       const billingDetails = {
         name: `${firstName} ${lastName}`,
@@ -177,10 +177,11 @@ const Checkout: React.FC = () => {
       };
 
       const cardElement = elements.getElement(CardElement);
+
       if (cardElement) {
         try {
           const { data: clientSecret } = await axios.post('/api/stripe-payment', {
-            amount: total * 100,
+            amount: Math.round(total) * 100,
           });
 
           const payload = await stripe.createPaymentMethod({
@@ -188,6 +189,7 @@ const Checkout: React.FC = () => {
             card: cardElement,
             billing_details: billingDetails,
           });
+          console.log({ payload });
 
           if (payload.error) {
             setError(payload?.error?.message || '');
@@ -207,6 +209,7 @@ const Checkout: React.FC = () => {
             _saveOrder(data);
           }
         } catch (err: any) {
+          console.log({ err });
           setError(err.message || '');
           setProcessing(false);
         }
@@ -264,7 +267,7 @@ const Checkout: React.FC = () => {
   return (
     <Fragment>
       <div className='container checkout'>
-        <h5>Total Amount: ${total}</h5>
+        <h5>Total Amount: ${Math.floor(parseInt(total))}</h5>
         <h3>Billing Address</h3>
         <div className='row'>
           <div className='col-sm-12 col-md-10'>

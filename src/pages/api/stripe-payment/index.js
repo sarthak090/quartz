@@ -3,6 +3,7 @@ import Cors from 'cors';
 import initMiddleware from '../../../lib/init-middleware';
 const stripe = new Stripe(
   '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'
+  // 'sk_test_51IQUUADP1cCP8cQo0Wwl5yuKz1HDc5HHDrvPddPhdgm9dlCEmUXDojNUoryAi890odshtCJqE5S74aLv4BvNbFju00vDYyWOs1'
 );
 
 // Initialize the cors middleware
@@ -24,9 +25,12 @@ export default async (req, res) => {
         amount,
         currency: 'usd',
       });
+      console.log({ paymentIntent });
 
       res.status(200).send(paymentIntent.client_secret);
     } catch (err) {
+      console.log({ err });
+
       res.status(500).json({ statusCode: 500, message: err.message });
     }
   } else {
