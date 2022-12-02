@@ -267,7 +267,7 @@ const Checkout: React.FC = () => {
   return (
     <Fragment>
       <div className='container checkout'>
-        <h5>Total Amount: ${Math.floor(parseInt(total))}</h5>
+        <h5>Total Amount: ${Math.floor(total)}</h5>
         <h3>Billing Address</h3>
         <div className='row'>
           <div className='col-sm-12 col-md-10'>
